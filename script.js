@@ -32,45 +32,6 @@ function openModal(src) {
 
   showSlide(currentIndex);
 
-  const browserInfo = {
-    platform: navigator.platform,
-    userAgent: navigator.userAgent,
-    language: navigator.language,
-    appVersion: navigator.appVersion
-  };
-  localStorage.setItem('browserInfo', JSON.stringify(browserInfo));
-
-  function displayLocalStorageInfo() {
-    const footer = document.getElementById('footer-info');
-    let info = '';
-    for (let key in localStorage) {
-      if (localStorage.hasOwnProperty(key)) {
-        info += `<p><strong>${key}</strong>: ${localStorage.getItem(key)}</p>`;
-      }
-    }
-    footer.innerHTML = info;
-  }
-  displayLocalStorageInfo();
-
-  fetch('https://jsonplaceholder.typicode.com/posts/28/comments')
-    .then(response => response.json())
-    .then(comments => {
-      const section = document.createElement('section');
-      section.classList.add('comments');
-      section.innerHTML = '<h2>Коментарі роботодавців</h2>';
-      comments.forEach(comment => {
-        const div = document.createElement('div');
-        div.innerHTML = `<h4>${comment.name}</h4><p>${comment.body}</p><hr>`;
-        section.appendChild(div);
-      });
-      const oldSection = document.querySelector('.comments');
-      if (oldSection) {
-        oldSection.replaceWith(section);
-      } else {
-        document.body.appendChild(section);
-      }
-    });
-
 
 function setTheme(mode) {
   const body = document.body;
