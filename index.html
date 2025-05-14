@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Orest Shchukin HTML</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
+    <div class="wrapper">
         <header>
-            <h1>Резюме - Щукін Орест Сергійович</h1>
-            <article>
-                <h2>Контактна інформація</h2>
-                <ul>
-                    <li><b>Телефон:</b> +380 66 104 92 24</li>
-                    <li><b>Електронна пошта:</b><a href="mailto:orest.shchukin@gmail.com" alt="email-address"> orest.shchukin@gmail.com</a></li>
-                </ul>
-            </article>
+            <img src="img/me.jpg" alt="My image" class="profile-photo">
+            <div class="intro">
+                <h1>Щукін Орест Сергійович</h1>
+                <span>Мережевий адміністратор</span>
+            </div>
         </header>
-        <main>
-            <article>
+
+        <main class="main-content">
+            <section>
                 <h2>Мета</h2>
                 <p>Прагну зайняти посаду адміністратора мережевого обладнання в інноваційній ІТ-компанії, де зможу застосувати свої знання мережевих технологій та високий рівень володіння англійською мовою для успішної реалізації проєктів та стабільної і безпечної роботи компанії.</p>
-            </article>
-            <article>
+            </section>
+
+            <section>
                 <h2>Освіта</h2>
                 <table>
                     <tr>
@@ -32,99 +33,114 @@
                     <tr>
                         <td>2022 – 2026</td>
                         <td>
-                            <p>
-                                <strong>Національний університет "Львівська Політехніка", Львів, Україна</strong></br>
-                                Навчаюсь на третьому курсі кафедри “Захист інформації” за спеціальністю “Кібербезпека”
-                            </p>
+                            <strong>Національний університет "Львівська Політехніка"</strong><br>
+                            Кафедра “Захист інформації”, спеціальність “Кібербезпека” (3 курс)
                         </td>
                     </tr>
                 </table>
-            </article>
-            <article>
+            </section>
+
+            <section>
                 <h2>Сертифікати</h2>
-                <ul>
-                    <li>
-                        <h3>HTML5/CSS3/Javascript fundamentals – SofServe IT Academy</h3>
-                        <ul>
-                            <li>Отримано: Вересень, 2020</li>
-                            <li>
-                                Набуті навички: Вміння роботи із веб-сайтами, практика розробки front-end, використання системи контролю версій git, хороше володіння та розуміння взаємодії HTML5, CSS3, JavaScript. Мої роботи: 
-                                </br>
-                                <a href="https://orestshchukin.github.io/Network-Guardian/">Network-Guardian</a>
-                                </br>
-                                <a href="https://orestshchukin.github.io/Refinish-Center/">Refinish-Center</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>Сертифікат C1 рівня англійської мови від Oxford Online Placement Test</h3>
-                        <ul>
-                            <li>Отримано: Грудень, 2022</li>
-                            <li>
-                                Підтверджує високий рівень володіння англійською мовою, включаючи розуміння складних текстів та вільне спілкування.
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h3>[2017 – 2020] Мала комп’ютерна академія IT STEP</h3>
-                        <p><b>Дисципліни які вивчались:</b></p>
-                        <ul>
-                            <li>Програмування на Python</li>
-                            <li>Веб – дизайн – Junior (HTML & CSS)</li>
-                            <li>Веб – дизайн Middle (Javascript)</li>
-                            <li>Створення мобільних додатків</li>
-                            <li>Стартап і фріланс</li>
-                        </ul>
-                    </li>
-                </ul>
-            </article>
-            <article>
+                <div class="certificates-wrapper">
+                  <div class="certificates-text">
+                    <ul>
+                      <li>
+                        <h3>HTML5/CSS3/Javascript fundamentals – SoftServe IT Academy</h3>
+                        <p class="date">Вересень, 2020</p>
+                        <p>Практика front-end, git, HTML5, CSS3, JavaScript. Проєкти:
+                          <br><a href="#">Network-Guardian</a>
+                          <br><a href="#">Refinish-Center</a>
+                        </p>
+                      </li>
+                      <li>
+                        <h3>Oxford Online Placement Test – C1</h3>
+                        <p class="date">Грудень, 2022</p>
+                        <p>Підтверджує вільне володіння англійською мовою.</p>
+                      </li>
+                      <li>
+                        <h3>Мала комп'ютерна академія IT STEP</h3>
+                        <p class="date">2017–2020</p>
+                        <p>Python, HTML/CSS, JS, мобільна розробка, фріланс.</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="certificates-carousel">
+                    <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                    <div class="carousel-track">
+                      <img src="img/ccna.jpg" class="carousel-image active" onclick="openModal(this.src)" alt="CCNA certificate">
+                      <img src="img/softserve.jpg" class="carousel-image" onclick="openModal(this.src)" alt="SoftServe HTML/CSS/JS Fundamentals certificate">
+                      <img src="img/oopt.jpg" class="carousel-image" onclick="openModal(this.src)" alt="OOPT certificate">
+                    </div>
+                    <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+                  </div>
+                </div>
+            </section>
+
+            <section>
                 <h2>Навички</h2>
-                <ul>
-                    <li>
+                <div class="skills">
+                    <div>
                         <h3>Hard Skills</h3>
                         <ul>
-                            <li>Принципи мережевої взаємодії та побудови: TCP/IP, Ethernet.</li>
-                            <li>Налаштування роутерів та комутаторів: Cisco IOS.</li>
-                            <li>Налаштування LAN та VLAN, основи WAN.</li>
-                            <li>Робота з інструментами: Wireshark, Cisco Packet Tracer.</li>
-                            <li>Практичне знання Python та JavaScript, розуміння принципів ООП</li>
-                            <li>Базове знання Linux та bash</li>
-                            <li>Розуміння та використання системи контролю версій git</li>
+                            <li>TCP/IP, Ethernet</li>
+                            <li>Cisco IOS, конфігурація LAN/VLAN</li>
+                            <li>Wireshark, Cisco Packet Tracer</li>
+                            <li>Python, JavaScript, ООП</li>
+                            <li>Linux, Bash</li>
+                            <li>Git, GitHub</li>
                         </ul>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <h3>Soft Skills</h3>
                         <ul>
-                            <li>Досвід публічних виступів</li>
-                            <li>Досвід роботі в команді (великій та малій)</li>
-                            <li>Лідерські якості, стресостійкість, емпатичність</li>
-                            <li>Критичне мислення та розв'язування проблем.</li>
-                            <li>Ефективна комунікація та підтримка робочого духу</li>
-                            <li>Менеджмент часу та пріоритетів.</li>
-                            <li>Адаптація до нових технологій та ситуацій.</li>
+                            <li>Публічні виступи, командна робота</li>
+                            <li>Лідерство, емпатія</li>
+                            <li>Критичне мислення, time management</li>
+                            <li>Гнучкість та адаптація до нових умов</li>
                         </ul>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <h3>Мови</h3>
                         <ul>
                             <li>Українська: рідна</li>
-                            <li>Англійська: C1 – вільне володіння.</li>
-                            <li>Польська : A2</li>
+                            <li>Англійська: C1</li>
+                            <li>Польська: A2</li>
                         </ul>
-                    </li>
-                </ul>
-            </article>
-            <article>
+                    </div>
+                </div>
+            </section>
+
+            <section>
                 <h2>Захоплення</h2>
-                <ul>
+                <ul class="hobbies">
                     <li>Музика</li>
                     <li>Волонтерство, аніматорство</li>
-                    <li>Cпорт (зал, волейбол)</li>
+                    <li>Спорт (зал, волейбол)</li>
                     <li>Автоспорт</li>
                 </ul>
-            </article>
+            </section>
+
+      <!-- Інші секції тут -->
+          <section class="contacts">
+            <h2>Контактна інформація</h2>
+            <ul>
+              <li><b>Телефон:</b> +380 66 104 92 24</li>
+              <li><b>Email:</b> <a href="mailto:orest.shchukin@gmail.com">orest.shchukin@gmail.com</a></li>
+            </ul>
+          </section>
         </main>
-    </div>    
+    </div>
+
+  <!-- Модальне вікно -->
+  <div id="imageModal" class="modal" onclick="closeModal(event)">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script src="script.js"></script>
+
+  
+        
 </body>
 </html>
