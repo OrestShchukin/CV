@@ -33,6 +33,8 @@ function openModal(src) {
   showSlide(currentIndex);
 
 
+
+
 function setTheme(mode) {
   const body = document.body;
   const icon = document.getElementById('theme-icon');
